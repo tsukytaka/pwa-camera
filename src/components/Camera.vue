@@ -44,6 +44,7 @@ export default {
     async StartRecording(facingMode) {
       this.facingMode = facingMode;
       let video = this.$refs.video;
+			video.setAttribute("playsinline", true);
       this.mediaStream = await navigator.mediaDevices.getUserMedia({
         video: { facingMode: facingMode },
       });
